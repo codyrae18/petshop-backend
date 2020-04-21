@@ -26,5 +26,4 @@ class UserController < ApplicationController
         byebug
         params.required(:user).permit(:username, :password_digest)
     end
-
 end
