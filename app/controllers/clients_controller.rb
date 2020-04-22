@@ -25,7 +25,6 @@ class ClientsController < ApplicationController
     private
     
     def client_params
-        byebug
         params.require(:client).permit(:lastname, :firstname, :homephone, :workphone)
     end
 end
