@@ -1,6 +1,6 @@
 class DogsController < ApplicationController
-    skip_before_action :verify_authenticity_token, :only => [:new, :create, :index]
-    skip_before_action :authorized, only: [:show, :update, :index, :create]
+    skip_before_action :verify_authenticity_token, :only => [:new, :create, :index, :destroy]
+    skip_before_action :authorized, only: [:show, :update, :index, :create, :destroy]
 
     def index
         @dogs = Dogs.all
@@ -15,6 +15,21 @@ class DogsController < ApplicationController
             render json: { error: 'failed to create dog' }, status: :not_acceptable
           end
     end
+
+    def edit
+
+    end
+
+    def update
+
+    end
+
+    def destroy
+        @dog = Dog.find_by(id: params[:id])
+        @dog.destroy
+    end
+
+
 
     private
 

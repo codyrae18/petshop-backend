@@ -1,6 +1,6 @@
 class ClientsController < ApplicationController
-    skip_before_action :verify_authenticity_token, :only => [:new, :create, :index, :show]
-    skip_before_action :authorized, only: [:show, :update, :index, :create]
+    skip_before_action :verify_authenticity_token, :only => [:new, :create, :index, :show, :destroy]
+    skip_before_action :authorized, only: [:show, :update, :index, :create, :destroy]
 
     def index
         @clients = Client.all 
@@ -26,6 +26,12 @@ class ClientsController < ApplicationController
             # render json: @client.errors, status: :unprocessable_entity
         end
     end
+
+    def destroy
+        @client = Client.find_by(id: params[:id])
+        @client.destroy
+    end
+
     
     private
     
