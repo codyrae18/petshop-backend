@@ -1,9 +1,9 @@
 Rails.application.routes.draw do
   post '/signup', to: 'user#create'
-  post '/adddog', to: 'dog#create'
+  post '/addpet', to: 'pet#create'
   resources :users
   resources :clients
   resources :appointments
-  resources :dogs
+  resources :pets
   resources :breeds
 end
