@@ -1,6 +1,6 @@
 class PetsController < ApplicationController
-    skip_before_action :verify_authenticity_token, :only => [:new, :create, :index, :destroy]
-    skip_before_action :authorized, only: [:show, :update, :index, :create, :destroy]
+    skip_before_action :verify_authenticity_token, :only => [:new, :create, :index, :edit, :update, :destroy]
+    skip_before_action :authorized, only: [:show, :update, :index, :create, :destroy, :edit]
 
     def index
         @pets = Pets.all
@@ -17,11 +17,14 @@ class PetsController < ApplicationController
     end
 
     def edit
-
+        @pet = Pet.find_by(params[:id])
     end
 
     def update
-
+        @pet = Pet.find(params[:id])
+           if @pet.update(pet_params)
+             render json: @pet 
+           end
     end
 
     def destroy
@@ -36,4 +39,6 @@ class PetsController < ApplicationController
     def pet_params
         params.required(:pet).permit(:name, :color, :specialconcerns, :rabies, :breed_id, :client_id)
     end
+    
+    
 end
