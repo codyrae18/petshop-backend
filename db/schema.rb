@@ -10,15 +10,23 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_04_24_021542) do
+ActiveRecord::Schema.define(version: 2020_04_27_175744) do
 
   create_table "appointments", force: :cascade do |t|
+    t.string "type"
+    t.integer "pet_id"
+    t.integer "service_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
 
   create_table "breeds", force: :cascade do |t|
     t.string "name"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "calendars", force: :cascade do |t|
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
@@ -39,6 +47,12 @@ ActiveRecord::Schema.define(version: 2020_04_24_021542) do
     t.string "rabies"
     t.integer "breed_id"
     t.integer "client_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "services", force: :cascade do |t|
+    t.string "name"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
