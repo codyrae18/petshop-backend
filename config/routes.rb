@@ -6,4 +6,5 @@ Rails.application.routes.draw do
   resources :appointments
   resources :pets
   resources :breeds
+  resources :services
 end
