@@ -14,3 +14,8 @@ Breed.create(name: "Airedale Terrier")
 Breed.create(name: "Akbash")
 Breed.create(name: "Akita")
 Breed.create(name: "Akit Chow")
+
+Service.create(name: "Full-service groom")
+Service.create(name: "Full-service bath")
+Service.create(name: "Nail grind")
+Service.create(name: "Quick nail trim")

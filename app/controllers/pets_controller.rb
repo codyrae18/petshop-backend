@@ -3,7 +3,7 @@ class PetsController < ApplicationController
     skip_before_action :authorized, only: [:show, :update, :index, :create, :destroy, :edit]
 
     def index
-        @pets = Pets.all
+        @pets = Pet.all
         render json: @pets
     end
 
