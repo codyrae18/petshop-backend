@@ -8,7 +8,7 @@ class ServicesController < ApplicationController
     end
 
     def create
-
+        @service = Sevice.create(services_params)
     end
 
     def new
