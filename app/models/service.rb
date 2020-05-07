@@ -1,4 +1,5 @@
 class Service < ApplicationRecord
-    belongs_to :appointment
+    has_many :appointments
+    has_many :pets, through: :appointments 
 
 end
