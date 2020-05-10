@@ -21,11 +21,15 @@ class AppointmentsController < ApplicationController
 
 
     def edit
-
+        @appointment = Appointment.find_by(params[:id])
     end
 
     def update
-
+        @appointment = Appointment.find(params[:id])
+        @appointment.toggle(:finish)
+        if @appointment.update(appointment_params)
+            render json: @appointment 
+     end
     end
 
     def destroy
