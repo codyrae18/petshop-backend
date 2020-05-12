@@ -21,7 +21,7 @@ class ServicesController < ApplicationController
     end
 
     def update
-
+        @service
     end
 
     def destroy
