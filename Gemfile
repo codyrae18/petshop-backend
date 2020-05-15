@@ -57,11 +57,13 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 
 
+
+
+
+
+gem 'mini_magick'
 gem "jwt", "~> 2.2"
 
 gem "active_model_serializers", "~> 0.10.10"
 
-gem "faker", "~> 2.6"
-
-
-gem 'mini_magick'
+gem "faker", "~> 2.11"

@@ -1,8 +1,9 @@
 class ServicesController < ApplicationController
-    skip_before_action :verify_authenticity_token, :only => [:new, :create, :index]
-    skip_before_action :authorized, only: [:show, :update, :index, :create]
+    skip_before_action :authorized, only: [:index, :create, :update]
+
 
     def index
+        byebug
         @services = Service.all 
         render json: @services
     end
@@ -14,7 +15,6 @@ class ServicesController < ApplicationController
     def new
         @service = Service.new
     end
-
 
     def edit
         @service = Service.find(params[:id])
