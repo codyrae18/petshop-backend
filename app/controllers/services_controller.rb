@@ -3,13 +3,19 @@ class ServicesController < ApplicationController
 
 
     def index
-        byebug
         @services = Service.all 
         render json: @services
     end
 
     def create
-        @service = Sevice.create(services_params)
+        byebug
+        @service = Service.create(service_params)
+
+        if @service.save
+            render json: @service, status: :created
+          else
+            render json: { error: 'failed to create service' }, status: :not_acceptable
+        end
     end
 
     def new
@@ -29,4 +35,9 @@ class ServicesController < ApplicationController
     end
 
     private
+
+    def service_params
+        params.required(:service).permit(:name)
+    end
+    
 end
