@@ -1,5 +1,5 @@
 class ServicesController < ApplicationController
-    skip_before_action :authorized, only: [:index, :create, :update]
+    skip_before_action :authorized, only: [:index, :create, :update, :destroy]
 
 
     def index
@@ -31,7 +31,8 @@ class ServicesController < ApplicationController
     end
 
     def destroy
-        @service = Service.find()
+        @service = Service.find_by(id: params[:id])
+        @service.destroy
     end
 
     private
