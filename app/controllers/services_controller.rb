@@ -25,7 +25,7 @@ class ServicesController < ApplicationController
     end
 
     def destroy
-
+        @service = Service.find()
     end
 
     private
