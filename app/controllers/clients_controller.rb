@@ -24,8 +24,8 @@ class ClientsController < ApplicationController
         
         if @client.save
             render json: @client, status: :created, location: @client
-        # else
-            # render json: @client.errors, status: :unprocessable_entity
+        else
+            render json: @client.errors, status: :unprocessable_entity
         end
     end
 
