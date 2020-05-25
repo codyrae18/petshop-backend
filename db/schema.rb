@@ -19,7 +19,7 @@ ActiveRecord::Schema.define(version: 2020_05_21_041954) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.boolean "finish"
-    t.string "date"
+    t.date "date"
   end
 
   create_table "breeds", force: :cascade do |t|

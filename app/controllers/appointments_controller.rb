@@ -8,6 +8,7 @@ class AppointmentsController < ApplicationController
     end
    
     def create
+        byebug
         @appointment = Appointment.create(appointment_params)
 
         if @appointment.save
@@ -42,7 +43,7 @@ class AppointmentsController < ApplicationController
     private
     
     def appointment_params
-        params.required(:appointment).permit(:pet_id, :service_id)
+        params.required(:appointment).permit(:pet_id, :service_id, :date)
     end
 end
 
