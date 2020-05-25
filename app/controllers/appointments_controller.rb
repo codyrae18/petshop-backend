@@ -19,7 +19,7 @@ class AppointmentsController < ApplicationController
     end
 
     def new
-
+        @appointment
     end
 
 
