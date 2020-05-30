@@ -15,7 +15,7 @@ class ClientsController < ApplicationController
     end
 
     def new
-        byebug
+        
 
     end
 
