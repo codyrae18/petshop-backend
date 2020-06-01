@@ -8,7 +8,6 @@ class AppointmentsController < ApplicationController
     end
    
     def create
-        byebug
         @appointment = Appointment.create(appointment_params)
 
         if @appointment.save
