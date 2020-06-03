@@ -1,7 +1,7 @@
 class ClientsController < ApplicationController
     # skip_before_action :verify_authenticity_token, :only => [:new, :create, :index, :show, :edit, :update, :destroy]
     # skip_before_action :authorized, only: [:show, :update, :edit, :index, :create, :destroy]
-    skip_before_action :authorized, only: [:index, :create, :update, :show]
+    skip_before_action :authorized, only: [:index, :create, :update, :show, :destroy]
 
 
     def index
