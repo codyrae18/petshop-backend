@@ -44,7 +44,6 @@ class Api::UsersController < ApplicationController
     end
 
     def set_user
-
         @user = user.find(params[:id])
     end
     
