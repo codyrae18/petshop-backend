@@ -1,5 +1,4 @@
 class AppointmentsController < ApplicationController
-    # skip_before_action :verify_authenticity_token, :only => [:new, :create, :index, :edit, :update, :destroy]
     skip_before_action :authorized, only: [:show, :update, :index, :create, :destroy, :edit]
    
     def index
@@ -22,7 +21,7 @@ class AppointmentsController < ApplicationController
     end
 
 
-    def edit
+    def edits
         @appointment = Appointment.find_by(params[:id])
     end
 
