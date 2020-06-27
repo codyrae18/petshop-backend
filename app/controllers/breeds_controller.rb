@@ -1,5 +1,4 @@
 class BreedsController < ApplicationController
-    # skip_before_action :authorized, only: [:show, :update, :index, :create]
     skip_before_action :authorized, only: [:index, :create, :update]
 
  
