@@ -1,5 +1,4 @@
 class ClientsController < ApplicationController
-    # skip_before_action :authorized, only: [:show, :update, :edit, :index, :create, :destroy]
     skip_before_action :authorized, only: [:index, :create, :update, :show, :destroy]
 
 
